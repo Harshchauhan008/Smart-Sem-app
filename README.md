@@ -28,4 +28,4 @@ never decides what is true.
 Backend: `./mvnw spring-boot:run`
 Set these as environment variables, never commit them: `DB_URL`, `DB_USERNAME`, `DB_PASSWORD`, `JWT_SECRET`, `GEMINI_API_KEY`
 Frontend: `flutter pub get && flutter run`
-(On the Android emulator, use `http://10.0.2.2:8080` as the base URL.)
+
