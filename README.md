@@ -1,16 +1,31 @@
-# smartsem
+# SmartSem
 
-A new Flutter project.
+A chat-first college assistant for managing semesters, subjects, timetables,
+attendance, assignments and study questions in one mobile app.
 
-## Getting Started
+**Core idea:** the database keeps the truth, the AI explains it, and the AI
+never decides what is true.
 
-This project is a starting point for a Flutter application.
+## Tech stack
+- **Frontend:** Flutter, Dart, Material Design 3, HTTP, Hive CE
+- **Backend:** Java 17, Spring Boot, Spring Security (JWT), Spring Data JPA, PostgreSQL
+- **AI:** Google Gemini 2.5 Flash (LLM) for chat, timetable extraction and intent detection
 
-A few resources to get you started if this is your first Flutter project:
+## Features
+- JWT authentication with per-user ownership checks
+- Semester, subject and timetable management
+- AI timetable extraction from an image, with a review step before import
+- Attendance tracking with percentage per subject
+- Persistent AI academic chat
+- Intent extraction (`/api/ai/extract-intent`)
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Status
+- Backend: implemented and tested locally
+- Frontend: auth, dashboard and attendance screens done; notifications in progress
+- Planned: AI chat screen, assignments and document upload screens, RAG over study material, push notifications
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Run locally
+Backend: `./mvnw spring-boot:run`
+Set these as environment variables, never commit them: `DB_URL`, `DB_USERNAME`, `DB_PASSWORD`, `JWT_SECRET`, `GEMINI_API_KEY`
+Frontend: `flutter pub get && flutter run`
+(On the Android emulator, use `http://10.0.2.2:8080` as the base URL.)
